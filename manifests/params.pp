@@ -22,7 +22,7 @@ class udev::params {
           fail("Module ${module_name} might not be supported on Fedora release ${::operatingsystemmajrelease}")
         }
       } else {
-        case $::operatingsystemmajrelease {
+        case $::os['distro']['release']['major'] {
           '5': {
             $udev_package    = 'udev'
             $udevtrigger     = 'udevtrigger'
